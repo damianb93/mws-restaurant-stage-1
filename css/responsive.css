@@ -1,0 +1,39 @@
+/* ====================== Media Queries ====================== */
+@media screen and (max-width: 440px) {
+    .filter-options {
+      justify-items: center;
+    }
+  
+    .filter-options > div {
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-content: center;
+    }
+
+    #restaurants-list {
+        padding: 30px 0 60px;
+    }
+  
+    #restaurants-list li {
+      margin: 15px 0;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .inside #maincontent {
+        grid-template-columns: 1fr;
+        grid-template-areas: "map" "restaurant" "reviews"
+    }
+
+    #reviews-list li {
+        width: 100%;
+    }
+
+    #breadcrumb {
+        width: 100%;
+    }
+
+    #reviews-container {
+        padding: 10px;
+    }
+}

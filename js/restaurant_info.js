@@ -22,7 +22,7 @@ initMap = () => {
         scrollWheelZoom: false
       });
       L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.jpg70?access_token={mapboxToken}', {
-        mapboxToken: '<your MAPBOX API KEY HERE>',
+        mapboxToken: 'pk.eyJ1IjoicXdlMTIzcXdlIiwiYSI6ImNqazVkemduNjFpazczdm10aDE3czNxdGMifQ.YzHM0FBAB0VYru78iKgbPg',
         maxZoom: 18,
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
           '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
@@ -191,4 +191,18 @@ getParameterByName = (name, url) => {
   if (!results[2])
     return '';
   return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+//DOM SCROLLING MANIPULATION BASED ON W3SCHOOLS EXAMPLE
+window.onscroll = function() { makeItSticky() };
+
+const breadcrumbNav = document.querySelector(".inside #breadcrumb");
+const sticky = breadcrumbNav.offsetTop;
+
+function makeItSticky() {
+  if (window.pageYOffset >= sticky) {
+    breadcrumbNav.classList.add("sticky")
+  } else {
+    breadcrumbNav.classList.remove("sticky");
+  }
 }
