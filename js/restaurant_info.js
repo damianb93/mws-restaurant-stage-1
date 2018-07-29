@@ -89,6 +89,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   const image = document.getElementById('restaurant-img');
   image.className = 'restaurant-img'
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.alt = DBHelper.altTextForRestaurantImage(restaurant);
 
   const cuisine = document.getElementById('restaurant-cuisine');
   cuisine.innerHTML = restaurant.cuisine_type;
@@ -193,7 +194,8 @@ getParameterByName = (name, url) => {
   return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 
-//DOM SCROLLING MANIPULATION BASED ON W3SCHOOLS EXAMPLE
+// DOM SCROLLING MANIPULATION BASED ON W3SCHOOLS EXAMPLE
+// Makes breadcrumb navbar sticky for restaurant details page
 window.onscroll = function() { makeItSticky() };
 
 const breadcrumbNav = document.querySelector(".inside #breadcrumb");
